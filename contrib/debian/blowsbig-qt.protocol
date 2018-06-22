@@ -1,0 +1,11 @@
+[Protocol]
+exec=blowsbig-qt '%u'
+protocol=blowsbig
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

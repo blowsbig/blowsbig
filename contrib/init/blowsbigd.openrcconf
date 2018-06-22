@@ -1,0 +1,26 @@
+# /etc/conf.d/blowsbigd: config file for /etc/init.d/blowsbigd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/blowsbig/blowsbig.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/blowsbigd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/blowsbigd.pid"
+
+# Where to write blowsbigd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/blowsbigd"
+
+# User and group to own blowsbigd process
+#BITCOIND_USER="blowsbig"
+#BITCOIND_GROUP="blowsbig"
+
+# Path to blowsbigd executable
+#BITCOIND_BIN="/usr/bin/blowsbigd"
+
+# Nice value to run blowsbigd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

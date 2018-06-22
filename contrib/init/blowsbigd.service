@@ -1,0 +1,26 @@
+[Unit]
+Description=BSG's distributed currency daemon
+After=network.target
+
+[Service]
+User=blowsbig
+Group=blowsbig
+
+Type=forking
+PIDFile=/var/lib/blowsbigd/blowsbigd.pid
+
+ExecStart=/usr/bin/blowsbigd -daemon -pid=/var/lib/blowsbigd/blowsbigd.pid \
+          -conf=/etc/blowsbig/blowsbig.conf -datadir=/var/lib/blowsbigd
+
+ExecStop=-/usr/bin/blowsbig-cli -conf=/etc/blowsbig/blowsbig.conf \
+         -datadir=/var/lib/blowsbigd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
